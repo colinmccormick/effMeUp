@@ -14,11 +14,15 @@
 - (void)flipsideViewControllerDidFinish:(eUFlipsideViewController *)controller;
 @end
 
-@interface eUFlipsideViewController : UIViewController
+@interface eUFlipsideViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet id <eUFlipsideViewControllerDelegate> delegate;
 @property (strong, nonatomic) NSArray *suggestedModels;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)done:(id)sender;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

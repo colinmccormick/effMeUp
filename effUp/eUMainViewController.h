@@ -8,7 +8,11 @@
 
 #import "eUFlipsideViewController.h"
 
-@interface eUMainViewController : UIViewController <eUFlipsideViewControllerDelegate, UIPopoverControllerDelegate>
+#define NEVER_GOOD_PAYBACK 100
+#define ALWAYS_GOOD_PAYBACK -1
+#define DONT_RECOMMEND_PAYBACK 200
+
+@interface eUMainViewController : UIViewController <eUFlipsideViewControllerDelegate, UIPopoverControllerDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

@@ -12,6 +12,39 @@
 
 @synthesize delegate = _delegate;
 @synthesize suggestedModels = _suggestedModels;
+#pragma mark Mine
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    NSLog(@"number of sections %d", 1);
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSLog(@"number of suggestions %d", [self.suggestedModels count]);
+    return [self.suggestedModels count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"applianceCell"];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"applianceCell"];
+    }
+
+    NSDictionary *suggestedModel = [self.suggestedModels objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [suggestedModel valueForKey:@"modelName"]];
+    float paybackValue = [[suggestedModel valueForKey:@"payback"] doubleValue];
+    if (paybackValue > 0) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"will save money in %1.1f years", paybackValue];
+    } else {
+        cell.detailTextLabel.text = @"will save money right now!";        
+    }
+    
+    return cell;
+}
 
 - (void)awakeFromNib
 {
@@ -35,6 +68,7 @@
 
 - (void)viewDidUnload
 {
+    [self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

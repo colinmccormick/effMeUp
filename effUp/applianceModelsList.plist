@@ -4,43 +4,103 @@
 <array>
     <dict>
         <key>modelName</key>
-        <string>ABC</string>
+        <string>NTW4700YQ</string>
         <key>price</key>
-        <integer>500</integer>
-        <key>energyUse</key>
-        <integer>200</integer>
+        <real>449.99</real>
+        <key>energyCost</key>
+        <real>50</real>
         <key>stars</key>
-        <integer>2</integer>
+        <real>25085</real>
     </dict>
     <dict>
         <key>modelName</key>
-        <string>XYZ</string>
+        <string>NTW4630YQ</string>
         <key>price</key>
-        <integer>400</integer>
-        <key>energyUse</key>
-        <integer>100</integer>
+        <real>399.99</real>
+        <key>energyCost</key>
+        <real>50</real>
         <key>stars</key>
-        <integer>3</integer>
+        <real>2178</real>
     </dict>
     <dict>
         <key>modelName</key>
-        <string>PDQ</string>
+        <string>FAFW3801LW</string>
         <key>price</key>
-        <integer>600</integer>
-        <key>energyUse</key>
-        <integer>300</integer>
+        <real>699.99</real>
+        <key>energyCost</key>
+        <real>11</real>
         <key>stars</key>
-        <integer>3</integer>
+        <real>9467</real>
     </dict>
     <dict>
         <key>modelName</key>
-        <string>LMN</string>
+        <string>GTWN2800DWW</string>
         <key>price</key>
-        <integer>450</integer>
-        <key>energyUse</key>
-        <integer>250</integer>
+        <real>549.99</real>
+        <key>energyCost</key>
+        <real>52</real>
         <key>stars</key>
-        <integer>2</integer>
+        <real>4045</real>
+    </dict>
+    <dict>
+        <key>modelName</key>
+        <string>GTWN4250DWS</string>
+        <key>price</key>
+        <real>599.99</real>
+        <key>energyCost</key>
+        <real>22</real>
+        <key>stars</key>
+        <real>5600</real>
+    </dict>
+    <dict>
+        <key>modelName</key>
+        <string>WM2250CW</string>
+        <key>price</key>
+        <real>719.99</real>
+        <key>energyCost</key>
+        <real>10</real>
+        <key>stars</key>
+        <real>5032</real>
+    </dict>
+    <dict>
+        <key>modelName</key>
+        <string>WM3470HVA</string>
+        <key>price</key>
+        <real>1199.99</real>
+        <key>energyCost</key>
+        <real>12</real>
+        <key>stars</key>
+        <real>7846</real>
+    </dict>
+    <dict>
+        <key>modelName</key>
+        <string>WM3470HWA</string>
+        <key>price</key>
+        <real>1099.99</real>
+        <key>energyCost</key>
+        <real>12</real>
+        <key>stars</key>
+        <real>7847</real>
+    </dict>
+    <dict>
+        <key>modelName</key>
+        <string>WT1101CW</string>
+        <key>price</key>
+        <real>629.99</real>
+        <key>energyCost</key>
+        <real>24</real>
+        <key>stars</key>
+        <real>1362</real>
+    </dict>
+    <dict>
+        <key>modelName</key>
+        <string>WT4870CW</string>
+        <key>price</key>
+        <real>719.99</real>
+        <key>energyCost</key>
+        <real>24</real>
+        <key>stars</key>
+        <real>7094</real>
     </dict>
 </array>
 </plist>
