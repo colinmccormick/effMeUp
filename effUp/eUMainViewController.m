@@ -26,7 +26,7 @@
 -(NSArray *)findSuggestedModels {
 
     NSString *modelNumber = self.modelNumberLabel.text;
-    NSArray *allModelNumbers = [self.arrayOfAllModels valueForKey:@"model"];
+    NSArray *allModelNumbers = [self.arrayOfAllModels valueForKey:@"modelName"];
     NSDictionary *baseModel = [self.arrayOfAllModels objectAtIndex:[allModelNumbers indexOfObject:modelNumber]];
     NSArray *suggestedModels = [self getSuggestionsForBaseModel:baseModel];
     return suggestedModels;
