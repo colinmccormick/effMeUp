@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B8007CF17B6040C0091CD48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8007CE17B6040C0091CD48 /* UIKit.framework */; };
+		3B8007D117B6040C0091CD48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8007D017B6040C0091CD48 /* Foundation.framework */; };
+		3B8007D317B6040C0091CD48 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8007D217B6040C0091CD48 /* CoreGraphics.framework */; };
+		3B8007D517B6040C0091CD48 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8007D417B6040C0091CD48 /* CoreData.framework */; };
+		3B8007DB17B6040C0091CD48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B8007D917B6040C0091CD48 /* InfoPlist.strings */; };
+		3B8007DD17B6040C0091CD48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8007DC17B6040C0091CD48 /* main.m */; };
+		3B8007E117B6040C0091CD48 /* eUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8007E017B6040C0091CD48 /* eUAppDelegate.m */; };
+		3B8007E417B6040C0091CD48 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8007E217B6040C0091CD48 /* MainStoryboard_iPhone.storyboard */; };
+		3B8007E717B6040C0091CD48 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8007E517B6040C0091CD48 /* MainStoryboard_iPad.storyboard */; };
+		3B8007EA17B6040C0091CD48 /* effUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B8007E817B6040C0091CD48 /* effUp.xcdatamodeld */; };
+		3B8007ED17B6040C0091CD48 /* eUMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8007EC17B6040C0091CD48 /* eUMainViewController.m */; };
+		3B8007F017B6040C0091CD48 /* eUFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8007EF17B6040C0091CD48 /* eUFlipsideViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B8007CA17B6040C0091CD48 /* effUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = effUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B8007CE17B6040C0091CD48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3B8007D017B6040C0091CD48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3B8007D217B6040C0091CD48 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3B8007D417B6040C0091CD48 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3B8007D817B6040C0091CD48 /* effUp-Info.plist */ = {isa = PBXFileReference; path = "effUp-Info.plist"; sourceTree = "<group>"; };
+		3B8007DA17B6040C0091CD48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B8007DC17B6040C0091CD48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B8007DE17B6040C0091CD48 /* effUp-Prefix.pch */ = {isa = PBXFileReference; path = "effUp-Prefix.pch"; sourceTree = "<group>"; };
+		3B8007DF17B6040C0091CD48 /* eUAppDelegate.h */ = {isa = PBXFileReference; path = eUAppDelegate.h; sourceTree = "<group>"; };
+		3B8007E017B6040C0091CD48 /* eUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eUAppDelegate.m; sourceTree = "<group>"; };
+		3B8007E317B6040C0091CD48 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		3B8007E617B6040C0091CD48 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		3B8007E917B6040C0091CD48 /* effUp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = effUp.xcdatamodel; sourceTree = "<group>"; };
+		3B8007EB17B6040C0091CD48 /* eUMainViewController.h */ = {isa = PBXFileReference; path = eUMainViewController.h; sourceTree = "<group>"; };
+		3B8007EC17B6040C0091CD48 /* eUMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eUMainViewController.m; sourceTree = "<group>"; };
+		3B8007EE17B6040C0091CD48 /* eUFlipsideViewController.h */ = {isa = PBXFileReference; path = eUFlipsideViewController.h; sourceTree = "<group>"; };
+		3B8007EF17B6040C0091CD48 /* eUFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eUFlipsideViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B8007C717B6040C0091CD48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B8007CF17B6040C0091CD48 /* UIKit.framework in Frameworks */,
+				3B8007D117B6040C0091CD48 /* Foundation.framework in Frameworks */,
+				3B8007D317B6040C0091CD48 /* CoreGraphics.framework in Frameworks */,
+				3B8007D517B6040C0091CD48 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B8007BF17B6040B0091CD48 = {
+			isa = PBXGroup;
+			children = (
+				3B8007D617B6040C0091CD48 /* effUp */,
+				3B8007CD17B6040C0091CD48 /* Frameworks */,
+				3B8007CB17B6040C0091CD48 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B8007CB17B6040C0091CD48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B8007CA17B6040C0091CD48 /* effUp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B8007CD17B6040C0091CD48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B8007CE17B6040C0091CD48 /* UIKit.framework */,
+				3B8007D017B6040C0091CD48 /* Foundation.framework */,
+				3B8007D217B6040C0091CD48 /* CoreGraphics.framework */,
+				3B8007D417B6040C0091CD48 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B8007D617B6040C0091CD48 /* effUp */ = {
+			isa = PBXGroup;
+			children = (
+				3B8007DF17B6040C0091CD48 /* eUAppDelegate.h */,
+				3B8007E017B6040C0091CD48 /* eUAppDelegate.m */,
+				3B8007E217B6040C0091CD48 /* MainStoryboard_iPhone.storyboard */,
+				3B8007E517B6040C0091CD48 /* MainStoryboard_iPad.storyboard */,
+				3B8007EB17B6040C0091CD48 /* eUMainViewController.h */,
+				3B8007EC17B6040C0091CD48 /* eUMainViewController.m */,
+				3B8007EE17B6040C0091CD48 /* eUFlipsideViewController.h */,
+				3B8007EF17B6040C0091CD48 /* eUFlipsideViewController.m */,
+				3B8007E817B6040C0091CD48 /* effUp.xcdatamodeld */,
+				3B8007D717B6040C0091CD48 /* Supporting Files */,
+			);
+			path = effUp;
+			sourceTree = "<group>";
+		};
+		3B8007D717B6040C0091CD48 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B8007D817B6040C0091CD48 /* effUp-Info.plist */,
+				3B8007D917B6040C0091CD48 /* InfoPlist.strings */,
+				3B8007DC17B6040C0091CD48 /* main.m */,
+				3B8007DE17B6040C0091CD48 /* effUp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B8007C917B6040C0091CD48 /* effUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B8007F317B6040C0091CD48 /* Build configuration list for PBXNativeTarget "effUp" */;
+			buildPhases = (
+				3B8007C617B6040C0091CD48 /* Sources */,
+				3B8007C717B6040C0091CD48 /* Frameworks */,
+				3B8007C817B6040C0091CD48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = effUp;
+			productName = effUp;
+			productReference = 3B8007CA17B6040C0091CD48 /* effUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B8007C117B6040C0091CD48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Novodox;
+			};
+			buildConfigurationList = 3B8007C417B6040C0091CD48 /* Build configuration list for PBXProject "effUp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3B8007BF17B6040B0091CD48;
+			productRefGroup = 3B8007CB17B6040C0091CD48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B8007C917B6040C0091CD48 /* effUp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B8007C817B6040C0091CD48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B8007DB17B6040C0091CD48 /* InfoPlist.strings in Resources */,
+				3B8007E417B6040C0091CD48 /* MainStoryboard_iPhone.storyboard in Resources */,
+				3B8007E717B6040C0091CD48 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B8007C617B6040C0091CD48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B8007DD17B6040C0091CD48 /* main.m in Sources */,
+				3B8007E117B6040C0091CD48 /* eUAppDelegate.m in Sources */,
+				3B8007EA17B6040C0091CD48 /* effUp.xcdatamodeld in Sources */,
+				3B8007ED17B6040C0091CD48 /* eUMainViewController.m in Sources */,
+				3B8007F017B6040C0091CD48 /* eUFlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3B8007D917B6040C0091CD48 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B8007DA17B6040C0091CD48 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3B8007E217B6040C0091CD48 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B8007E317B6040C0091CD48 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		3B8007E517B6040C0091CD48 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B8007E617B6040C0091CD48 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B8007F117B6040C0091CD48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B8007F217B6040C0091CD48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B8007F417B6040C0091CD48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "effUp/effUp-Prefix.pch";
+				INFOPLIST_FILE = "effUp/effUp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3B8007F517B6040C0091CD48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "effUp/effUp-Prefix.pch";
+				INFOPLIST_FILE = "effUp/effUp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B8007C417B6040C0091CD48 /* Build configuration list for PBXProject "effUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B8007F117B6040C0091CD48 /* Debug */,
+				3B8007F217B6040C0091CD48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B8007F317B6040C0091CD48 /* Build configuration list for PBXNativeTarget "effUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B8007F417B6040C0091CD48 /* Debug */,
+				3B8007F517B6040C0091CD48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3B8007E817B6040C0091CD48 /* effUp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B8007E917B6040C0091CD48 /* effUp.xcdatamodel */,
+			);
+			currentVersion = 3B8007E917B6040C0091CD48 /* effUp.xcdatamodel */;
+			path = effUp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3B8007C117B6040C0091CD48 /* Project object */;
+}
