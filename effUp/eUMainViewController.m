@@ -12,6 +12,8 @@
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize flipsidePopoverController = _flipsidePopoverController;
+@synthesize modelNumberLabel = _modelNumberLabel;
+@synthesize arrayOfAllModels = _arrayOfAllModels;
 
 - (void)didReceiveMemoryWarning
 {
@@ -19,16 +21,56 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+#pragma mark - My methods
+
+-(NSArray *)findSuggestedModels {
+
+    NSString *modelNumber = self.modelNumberLabel.text;
+    NSArray *allModelNumbers = [self.arrayOfAllModels valueForKey:@"model"];
+    NSDictionary *baseModel = [self.arrayOfAllModels objectAtIndex:[allModelNumbers indexOfObject:modelNumber]];
+    NSArray *suggestedModels = [self getSuggestionsForBaseModel:baseModel];
+    return suggestedModels;
+}
+
+-(NSArray *)getSuggestionsForBaseModel:(NSDictionary *)baseModel {
+    
+    NSMutableArray *suggestedModels = [[NSMutableArray alloc] init];
+    for (id model in self.arrayOfAllModels) {
+        NSDictionary *comparedModel = [NSDictionary dictionaryWithDictionary:model];
+        [comparedModel setValue:[self calculatePaybackFromBaseModel:baseModel toTargetModel:model] forKey:@"payback"];
+        [suggestedModels addObject:comparedModel];
+    }
+    [suggestedModels sortUsingComparator:^NSComparisonResult(id model1, id model2)
+     {
+         NSNumber *payback1 = [model1 valueForKey:@"payback"];
+         NSNumber *payback2 = [model2 valueForKey:@"payback"];
+         return [payback1 compare:payback2];
+     }];
+     
+    return suggestedModels;
+}
+
+-(NSNumber *)calculatePaybackFromBaseModel:(NSDictionary *)baseModel toTargetModel:(NSDictionary *)targetModel {
+    return [NSNumber numberWithInt:2];
+}
+
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+        
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *plistPath = [bundle pathForResource:@"applianceModelsList" ofType:@"plist"];
+    NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath];
+    self.arrayOfAllModels = array;  
 }
 
 - (void)viewDidUnload
 {
+    [self setModelNumberLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -90,6 +132,9 @@
             UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
             self.flipsidePopoverController = popoverController;
             popoverController.delegate = self;
+            
+            NSArray *suggestedModels = [self findSuggestedModels];
+            [[segue destinationViewController] setSuggestedModels:suggestedModels];
         }
     }
 }

@@ -17,6 +17,7 @@
 @interface eUFlipsideViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet id <eUFlipsideViewControllerDelegate> delegate;
+@property (strong, nonatomic) NSArray *suggestedModels;
 
 - (IBAction)done:(id)sender;
 

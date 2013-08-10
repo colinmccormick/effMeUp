@@ -11,6 +11,7 @@
 @implementation eUFlipsideViewController
 
 @synthesize delegate = _delegate;
+@synthesize suggestedModels = _suggestedModels;
 
 - (void)awakeFromNib
 {

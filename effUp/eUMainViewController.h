@@ -13,5 +13,11 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
+@property (weak, nonatomic) IBOutlet UITextField *modelNumberLabel;
+@property (strong, nonatomic) NSArray *arrayOfAllModels;
+
+-(NSArray *)findSuggestedModels;
+-(NSArray *)getSuggestionsForBaseModel:(NSDictionary *)baseModel;
+-(NSNumber *)calculatePaybackFromBaseModel:(NSDictionary *)baseModel toTargetModel:(NSDictionary *)targetModel;
 
 @end
