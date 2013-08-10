@@ -24,9 +24,7 @@
 #pragma mark - My methods
 
 -(NSArray *)findSuggestedModels {
-    NSLog(@"about to find suggested models");
     NSString *modelNumber = self.modelNumberLabel.text;
-    NSLog(@"for model number %@", modelNumber);
     NSArray *allModelNumbers = [self.arrayOfAllModels valueForKey:@"modelName"];
     NSDictionary *baseModel = [self.arrayOfAllModels objectAtIndex:[allModelNumbers indexOfObject:modelNumber]];
     NSArray *suggestedModels = [self getSuggestionsForBaseModel:baseModel];
@@ -35,16 +33,13 @@
 
 -(NSArray *)getSuggestionsForBaseModel:(NSDictionary *)baseModel {
     
-    //NSMutableArray *suggestedModels = [[NSMutableArray alloc] init];
     NSMutableArray *suggestedModels = [NSMutableArray array];
     for (id model in self.arrayOfAllModels) {
         if ([model valueForKey:@"modelName"] != [baseModel valueForKey:@"modelName"]) {
-            NSLog(@"comparing to %@", [model valueForKey:@"modelName"]);
             NSMutableDictionary *comparedModel = [NSMutableDictionary dictionaryWithDictionary:model];
             [comparedModel setObject:[self calculatePaybackFromBaseModel:baseModel toTargetModel:model] forKey:@"payback"];
-          //  [comparedModel setObject:@"test" forKey:@"payback"];
             NSLog(@"payback value %@", [comparedModel valueForKey:@"payback"]);
-            if ([comparedModel valueForKey:@"payback"] < [NSNumber numberWithFloat:(NEVER_GOOD_PAYBACK-1)]) {
+            if ([[comparedModel valueForKey:@"payback"] doubleValue] < (NEVER_GOOD_PAYBACK-1)) {
                 [suggestedModels addObject:comparedModel];
             }
         }
@@ -62,18 +57,15 @@
 -(NSNumber *)calculatePaybackFromBaseModel:(NSDictionary *)baseModel toTargetModel:(NSDictionary *)targetModel {
     NSDecimalNumber *basePrice = [baseModel valueForKey:@"price"];
     NSDecimalNumber *targetPrice = [targetModel valueForKey:@"price"];
-  //  NSLog(@"base %@, target %@", basePrice, targetPrice);
     float costDelta = [targetPrice doubleValue] - [basePrice doubleValue];
-  //  NSLog(@"cost delta is %5.1f", costDelta);
     
     NSDecimalNumber *baseEnergyCost = [baseModel valueForKey:@"energyCost"];
     NSDecimalNumber *targetEnergyCost = [targetModel valueForKey:@"energyCost"];
     float energyCostDelta = [targetEnergyCost doubleValue] - [baseEnergyCost doubleValue];
-  //  NSLog(@"energy cost delta is %5.1f", energyCostDelta);
     
     NSNumber *payback = [NSNumber numberWithFloat:0];
     if (costDelta > 0) { // more expensive
-        if (energyCostDelta > 0) { // less efficient
+        if (energyCostDelta >= 0) { // less efficient
             payback = [NSNumber numberWithFloat:NEVER_GOOD_PAYBACK]; // always worse
         } else { // more efficient
             payback = [NSNumber numberWithFloat:(-costDelta / energyCostDelta)]; // payback sometime
@@ -100,7 +92,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  //  [self.modelNumberLabel setDelegate:self];
 	// Do any additional setup after loading the view, typically from a nib.
         
     NSBundle *bundle = [NSBundle mainBundle];
@@ -169,15 +160,14 @@
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
         
-        NSLog(@"about to go into UI thing");
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
             self.flipsidePopoverController = popoverController;
             popoverController.delegate = self;
             
         }
-        NSLog(@"about to get suggested models in segue");
         NSArray *suggestedModels = [self findSuggestedModels];
+        NSLog(@"Passing suggested models, count is %i", [suggestedModels count]);
         [[segue destinationViewController] setSuggestedModels:suggestedModels];
     }
 }

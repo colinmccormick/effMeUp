@@ -87,6 +87,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
+    [self setSuggestedModels:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
