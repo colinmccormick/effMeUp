@@ -24,33 +24,35 @@
 #pragma mark - My methods
 
 -(NSArray *)findSuggestedModels {
+    NSArray *suggestedModels = [NSArray array];
     NSString *modelNumber = self.modelNumberLabel.text;
     NSArray *allModelNumbers = [self.arrayOfAllModels valueForKey:@"modelName"];
-    NSDictionary *baseModel = [self.arrayOfAllModels objectAtIndex:[allModelNumbers indexOfObject:modelNumber]];
-    NSArray *suggestedModels = [self getSuggestionsForBaseModel:baseModel];
+    // Only call getSuggestionsForBaseModel if the model matches one in the database
+    if ([allModelNumbers containsObject:modelNumber]) {    
+        NSDictionary *baseModel = [self.arrayOfAllModels objectAtIndex:[allModelNumbers indexOfObject:modelNumber]];
+         suggestedModels = [self getSuggestionsForBaseModel:baseModel];
+    }
     return suggestedModels;
 }
 
 -(NSArray *)getSuggestionsForBaseModel:(NSDictionary *)baseModel {
-    
     NSMutableArray *suggestedModels = [NSMutableArray array];
+    // Build array of dictionaries that are suggestions; dictionary includes keys/values from self.arrayOfAllModels and adds a key/value pair for the calculated payback
     for (id model in self.arrayOfAllModels) {
         if ([model valueForKey:@"modelName"] != [baseModel valueForKey:@"modelName"]) {
             NSMutableDictionary *comparedModel = [NSMutableDictionary dictionaryWithDictionary:model];
             [comparedModel setObject:[self calculatePaybackFromBaseModel:baseModel toTargetModel:model] forKey:@"payback"];
-            NSLog(@"payback value %@", [comparedModel valueForKey:@"payback"]);
             if ([[comparedModel valueForKey:@"payback"] doubleValue] < (NEVER_GOOD_PAYBACK-1)) {
                 [suggestedModels addObject:comparedModel];
             }
         }
     }
-    [suggestedModels sortUsingComparator:^NSComparisonResult(id model1, id model2)
-     {
+    // Sort result by payback time
+    [suggestedModels sortUsingComparator:^NSComparisonResult(id model1, id model2) {
          NSNumber *payback1 = [model1 valueForKey:@"payback"];
          NSNumber *payback2 = [model2 valueForKey:@"payback"];
          return [payback1 compare:payback2];
      }];
-     
     return suggestedModels;
 }
 
@@ -83,6 +85,12 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.modelNumberLabel) {
         [textField resignFirstResponder];
+        // Check if model number is in database
+        NSArray *allModelNumbers = [self.arrayOfAllModels valueForKey:@"modelName"];
+        if (![allModelNumbers containsObject:self.modelNumberLabel.text]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Model not found" message:@"That model number isn't in the database" delegate:self cancelButtonTitle:@"Enter new model number" otherButtonTitles:nil];
+            [alert show];
+        }
     }
     return YES;
 }
@@ -167,7 +175,6 @@
             
         }
         NSArray *suggestedModels = [self findSuggestedModels];
-        NSLog(@"Passing suggested models, count is %i", [suggestedModels count]);
         [[segue destinationViewController] setSuggestedModels:suggestedModels];
     }
 }

@@ -16,13 +16,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSLog(@"number of sections %d", 1);
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"number of suggestions %d", [self.suggestedModels count]);
     return [self.suggestedModels count];
 }
 
