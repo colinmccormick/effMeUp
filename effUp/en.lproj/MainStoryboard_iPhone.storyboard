@@ -36,13 +36,10 @@
                                     <outlet property="delegate" destination="2" id="htF-zw-K8u"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter model number:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="jJV-OY-u7m">
-                                <rect key="frame" x="47" y="77" width="226" height="29"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo.png" id="HSB-hg-eXy">
+                                <rect key="frame" x="66" y="12" width="201" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -124,6 +121,9 @@
             <point key="canvasLocation" x="368" y="182"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo.png" width="137" height="107"/>
+    </resources>
     <classes>
         <class className="eUFlipsideViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/eUFlipsideViewController.h"/>
